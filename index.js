@@ -184,6 +184,22 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 
 // use destructuring and the spread operator to grab the first and second games
 
+let [first, second, ...others] = sortedGames;
+
+const top = document.createElement('div');
+top.innerHTML = `
+<img src="${first.img}" style="width: 50%">
+<h3> ${first.name} </h3>
+`;
+firstGameContainer.appendChild(top);
+
+const sec = document.createElement('div');
+sec.innerHTML = `
+<img src="${second.img}" style="width: 50%">
+<h3> ${second.name} </h3>
+`;
+secondGameContainer.appendChild(sec);
+
 // create a new element to hold the name of the top pledge game, then append it to the correct element
 
 // do the same for the runner up item
